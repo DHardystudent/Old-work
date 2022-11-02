@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<TITLE>Example 02.01 - Asg Scene</TITLE>
+	<SCRIPT TYPE="text/javascript" SRC="../libs/three.js"></SCRIPT>
+	<SCRIPT TYPE="text/javascript" SRC="../libs/stats.min.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="../libs/dat.gui.min.js"></SCRIPT>
+	<style>
+		body {
+		/* set margin to 0 and overflow to hidden, to go fullscreen */
+			margin: 0;
+			overflow: hidden;
+		}
+	</style>
+<!-- Attempt at adding a imput box positioning-->
+	<style>
+	.poz
+	{
+	position:absolute;bottom:35px; right:10px; width:5%;
+	}
+	.boz
+	{
+	position:absolute;bottom:55px; right:10px; width:5%;
+	}
+	.doz
+	{
+	position:absolute;bottom:75px; right:10px; width:5%;
+	}
+	button
+	{
+	background-color: red;
+	position:absolute;bottom:15px; right:10px; width:50px;
+	}
+	</style>
+	
+</head>
+<body>
+<div id="Stats-output">
+</div>
+
+<!-- Area to input NO clue what else to do -->
+
+
+<!-- Div which will hold the Output -->
+<Div id="WebGL-output">
+</Div>
+
+<!-- Javascript code that runs our three.js examples -->
+<script type="text/javascript" src="01-asg-scene.js">
+</script>
+
+<form>
+	<input id = "x" type="number" step="0.01"  class="doz"> <!-- For x -->
+	<input id = "y" type="number" step="0.01"  class="boz"> <!-- For y -->
+	<input id = "z" type="number" step="0.01"  class="poz"> <!-- For z -->
+	<button id="button">
+		Set
+	</button>
+</form>
+
+
+</body>
+</HTML>
