@@ -1,0 +1,21 @@
+You are asked in Assignment 03 to implement the sequential matrix multiply and see if you can parallize that process using C++ threads.
+
+Computing the product of two arrays require the the first array to have the same number of columns as the second array does rows.   So, if you try to multiply an n x m array with an m x p array, the result will be an n x p array.  This is computed for each entry in the result being computed as cross product of matching row and column.
+
+Thus, the algorithm is as follows:
+
+INPUT: Arrays A and B whose sizes are matrix multiply compatible with A: n x m, and B: m x p
+OUTPUT: An array C of the appropriate size n x p
+FOR i IN [1 .. n]:
+FOR j  IN [1 ... p]:
+Let sum = 0
+FOR k in [1..m]:
+SET sum = aum + (A[i,k]*B[k,j]
+SET C[i,j] = sum
+RETURN C
+
+
+To help with the task to figure out to do this in parallel, here's a decent algorithm for doing this as noted on the Wikipedia page for matrix multiplication.   This algorithm uses a divide and conquer approach to split the arrays up into parts until you get to point where you multiply two scalars together.    This algorithm is in fork-join pseduocode, where each "fork" means launching a new thread and the joins are implemented in a loop joining each thread indvidually.    Note that the thread function should be a recursive call to the function in process, eitehr multiply or add.   Use a vector of threads to the "fork" and then loop through the vector on the join process, joining each thread in turn.
+
+
+image provided to
