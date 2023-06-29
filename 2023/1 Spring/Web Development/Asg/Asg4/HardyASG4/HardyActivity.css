@@ -1,0 +1,21 @@
+/* Interactivity */
+footer div{
+	transform: translateY(30px);
+}
+
+#heading1{
+	transform: scale(1.2);
+	transform: rotate(-10deg);
+}
+
+#Share{
+	transform: translateY(30px);
+}
+
+#Hobbies > h2{
+	transform: rotate(-10deg);
+}
+
+#Interests > h2{
+	transform: rotate(-10deg);
+}

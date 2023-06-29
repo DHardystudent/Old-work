@@ -1,0 +1,7 @@
+218/300
+
+On your presentation you will want to have a slide at the end so that the audience is visually aware that your presentation is over.  This also takes away from having to say "That's all for my pitch" and you can just end with a "Thank you"
+
+On your website there were some pieces missing, all of the items required for the form was not included, this was the largest point deductions.  You also did not use the figure elements or captions, and within your table you did not use table capsions or headers.
+
+On your report, with the wireframe images you should have had the text before each image and explained the reasonining behind the layouts tha tyou plannhed to use.  Similar with the live site images.  So before each image you shoul provide the reader with a textual explanation of what it is that they are seeing, and have the image immediately follow, that way they are able to reference the image as they read what you have to say about it.  This is the same for the code validation.

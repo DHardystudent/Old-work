@@ -1,0 +1,4 @@
+Got to w3c markup validation service and type in my url or upload the file
+https://validator.w3.org/
+
+turn in has errors and warnings. -20%

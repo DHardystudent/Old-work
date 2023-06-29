@@ -1,0 +1,187 @@
+V1 Small board
+
+TITLE Add and Subtract, Version 2         (AddSub2.asm)
+
+; This program adds and subtracts 32-bit integers
+; and stores the sum in a variable.
+
+INCLUDE Irvine32.inc
+
+.data
+val1     byte  "I like pie", 0Ah, 0D, 0
+
+
+.code
+main PROC ; call SetTextColor 
+	mov eax, 0Ah
+	call WriteChar
+	mov eax, 32
+	call WriteChar
+	call WriteChar
+	
+	mov edx, 4
+	T3:
+	mov ecx, 4
+
+	T1:
+	mov eax, white
+	call SetTextColor
+	mov eax, 219
+	call WriteChar
+	call WriteChar
+	mov eax, red
+	call SetTextColor
+	mov eax, 219
+	call WriteChar
+	call WriteChar
+	loop T1 ; Loop for white red line
+
+	mov eax, 0Ah ; character return
+	call WriteChar
+	mov eax, 32
+	call WriteChar
+	call WriteChar
+
+	mov ecx, 4
+	T2:
+	mov eax, red
+	call SetTextColor
+	mov eax, 219
+	call WriteChar
+	call WriteChar
+	mov eax, white
+	call SetTextColor
+	mov eax, 219
+	call WriteChar
+	call WriteChar
+	loop T2 ; loop for red white line
+
+	mov eax, 0Ah ; character return
+	call WriteChar
+	mov eax, 32
+	call WriteChar
+	call WriteChar
+
+	sub edx, 1
+	cmp edx, 0
+	jnz T3
+
+	mov eax, 0Ah
+	call WriteChar
+	mov eax, 32
+	call WriteChar
+	call WriteChar
+
+
+	exit
+main ENDP
+END main
+
+
+
+
+V2 Larger Board
+TITLE Add and Subtract, Version 2         (AddSub2.asm)
+
+; This program adds and subtracts 32-bit integers
+; and stores the sum in a variable.
+
+INCLUDE Irvine32.inc
+
+.data
+val1     byte  "I like pie", 0Ah, 0D, 0
+
+
+.code
+main PROC 
+	mov eax, 0Ah
+	call WriteChar
+	mov eax, 32
+	call WriteChar
+	call WriteChar
+	
+	mov edx, 4
+	T3:
+	mov ecx, 4
+	mov ebx, 2
+
+	T1:
+	mov eax, white
+	call SetTextColor
+	mov eax, 219
+	call WriteChar
+	call WriteChar
+	call WriteChar
+	call WriteChar
+	mov eax, red
+	call SetTextColor
+	mov eax, 219
+	call WriteChar
+	call WriteChar
+	call WriteChar
+	call WriteChar
+	loop T1 ; Loop for white red line
+
+	
+
+
+	mov eax, 0Ah ; character return
+	call WriteChar
+	mov eax, 32
+	call WriteChar
+	call WriteChar
+
+	sub ebx, 1
+	cmp ebx, 0
+	je J1
+	mov ecx, 4
+	jne T1
+
+	J1:
+	mov ecx, 4
+	mov ebx, 2
+	T2:
+	mov eax, red
+	call SetTextColor
+	mov eax, 219
+	call WriteChar
+	call WriteChar
+	call WriteChar
+	call WriteChar
+	mov eax, white
+	call SetTextColor
+	mov eax, 219
+	call WriteChar
+	call WriteChar
+	call WriteChar
+	call WriteChar
+	loop T2 ; loop for red white 
+	
+
+	mov eax, 0Ah ; character return
+	call WriteChar
+	mov eax, 32
+	call WriteChar
+	call WriteChar
+
+	sub ebx, 1
+	cmp ebx, 0
+	je J2
+	mov ecx, 4
+	jne T2
+	J2:
+
+	sub edx, 1
+	jnz T3
+
+	mov eax, 0Ah
+	call WriteChar
+	mov eax, 32
+	call WriteChar
+	call WriteChar
+
+
+	exit
+main ENDP
+END main
+

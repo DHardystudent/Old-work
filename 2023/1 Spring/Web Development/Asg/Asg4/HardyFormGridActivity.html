@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Devin Hardy 
+	 00076619 
+	 dhardy2@my.athens.edu -->
+
+<html lang="en">
+	<head>
+		<title>Form</title>
+		<link rel="icon" type="image/x-icon" href="image/dh.jpg">
+		<link rel="stylesheet" href="css/HardyGrid.css">
+		<link rel="stylesheet" href="css/HardyActivity.css">
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<header>
+		<h1>Form Data Entry</h1>
+		</header>
+		
+		<main class="grid-container">
+		<div id="Info">
+		<form action="Script" method="POST">
+		<fieldset>
+		<legend>Personal Information</legend>
+		<label for="fname">First Name</label>
+		<input type="text" id="fname" name="fname" maxlength="10">
+		<label for="lname">Last Name</label>
+		<input type="text" id="lname" name="lname" maxlength="10">
+		<br>
+		<label for="bday">Birthday</label>
+		<input type="date" id="bday" name="bday">
+		<br>
+		</fieldset>
+		</form>
+		</div>
+		<form id="Choose">
+		<p>Click the interest of mine that you share an interest in.</p>
+		<input type="radio" name="chooseone" id="music"><label for="music">Music</label>
+		<br>
+		<input type="radio" name="chooseone" id="hardware"><label for="hardware">Hardware</label>
+		<br>
+		<input type="radio" name="chooseone" id="fantasy"><label for="fantasy">Fantasy</label>
+		</form>
+		<br><br>
+		<div id="Share">
+		<fieldset>
+		<legend>Shared Interest</legend>
+		Please share more info about the interest we share please.<br>
+		<textarea rows="4" cols="100" name="Share">
+		Enter info here...
+		</textarea>
+		</fieldset>
+		</div>
+		</main>
+		
+		<footer>
+		</footer>
+	</body>
+</html>

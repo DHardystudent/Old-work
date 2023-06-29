@@ -1,0 +1,12 @@
+Presentation
+Items in report:
+add figures of wireframe, dom diagram, and site map
+
+target audience
+
+analysis of site:
+Site is valid, accessibility, not mobile friendly
+
+Live demo
+
+mention some of my reflection

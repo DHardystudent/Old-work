@@ -1,0 +1,196 @@
+<template>
+  <v-container class="fill-height">
+    <v-responsive class="d-flex text-center fill-height">
+      <v-card>
+        <v-card-title>Groups</v-card-title>
+        <v-card-actions class="align-center justify-center">
+          <!--<v-btn variant="text" color="teal-accent-4" class="admin-actions" @click="new_group">Create</v-btn> -->
+          <v-btn class="admin-actions" type="add_group" color="teal-accent-4" @click="open_create" variant="text">Create</v-btn>
+        </v-card-actions>
+        <v-card-text>
+          <v-table density="compact">
+            <thead>
+              <tr>
+                <th class="text-center">Delete</th>
+                <th class="text-center">Edit</th>
+                <th class="text-center">Title</th>
+              </tr>
+            </thead>
+            <tbody v-if="groups !== null">
+              <tr v-for="group in groups" :key="group.id">
+                <th width="1%">
+                  <v-btn size="x-small" color="error" @click="delete_group(group)">
+                    <v-icon>mdi-trash-can</v-icon>
+                  </v-btn>
+                </th>
+                <th width="1%">
+                  <v-btn size="x-small" color="primary" @click="edit_group(group)">
+                    <v-icon>mdi-puzzle-edit</v-icon>
+                  </v-btn>
+                </th>
+                <td>{{ group.name }}</td>
+              </tr>
+            </tbody>
+          </v-table>
+        </v-card-text>
+      </v-card>
+    </v-responsive>
+  </v-container>
+  <!-- Dialogs-->
+  <!-- New Group-->
+  <v-dialog v-model="create_group_model" class="justify-center align-center text-center" persistent width="1000px">
+    <v-card v-if="new_group_data !== null">
+      <v-card-title>New Group</v-card-title>
+      <v-card-text>
+        <v-text-field v-model="new_group_data.name" label="Name"></v-text-field>
+      </v-card-text> 
+      <v-card-actions>
+        <v-btn color="primary" @click="create_group" :disabled="!new_group_data.name">Created</v-btn>
+        <v-btn @click="cancel_new">Cancel</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+  <!--
+  <v-dialog v-model="new_group" persistent width="400px">
+    
+  </v-dialog>
+  -->
+  <!-- Edit Group-->
+  <v-dialog v-model="edit_group" persistent width="400px">
+    <v-card v-if="edit_group_data !== null">
+      <v-card-title>Edit Group</v-card-title>
+      <v-card-text>
+        <v-text-field v-model="edit_group_data.name" label="Name"></v-text-field>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn color="primary" @click="modify_group" :disabled="!edit_group_data.name"></v-btn>
+        <v-btn @click="cancel_edit">Cancel</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+  <!-- Delete Group-->
+  <v-dialog v-model="delete_group" persistent width="400px">
+    <v-card v-if="delete_group_data !== null">
+      <v-card-title>Confirm Delete</v-card-title>
+      <v-card-text>
+        Are you sure you want to delete the group {{ delete_group_data.name }}
+      </v-card-text>
+      <v-card-actions>
+        <v-btn color="error" @click="remove_group"></v-btn>
+        <v-btn @click="cancel_delete">Cancel</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+</template>
+<!-- Functions to place data into backend-->
+<script>
+import api from '@/services/api/';
+
+export default {
+  name: 'Groups',
+  data: function () {
+    return {
+      new_group: false,
+      edit_group: false,
+      delete_group: false,
+      new_group_data: null,
+      edit_group_data: null,
+      delete_group_data: null,
+      groups: null,
+    }
+  },
+  mounted: function () {
+    this.get_groups()
+  },
+  methods: {
+    get_groups() {
+      api.get('/groups/').then(res=> {
+        this.groups = res.data;
+        console.log(res)
+      }).catch(err => {
+        console.error(err)
+        this.$store.dispatch('showNotification', {
+          color: 'red',
+          message: 'Error retrieving groups.',
+        });
+      })
+    },
+    open_create() {
+      this.create_group_model = true
+    },
+    new_group: function() {
+      this.new_group_data = {name: ''}
+      this.new_group = true
+    },
+    create_group: function () {
+      api.post('/group/', this.new_group_data).then(res => {
+        this.$store.dispatch('showNotification', {
+          color: 'green',
+          message: 'Created certification succesfully.',
+        });
+      }).finally(() => {
+        this.new_group = false
+        this.new_group_data = null
+        this.get_groups()
+      });
+    },
+    cancel_new: function () {
+      this.new_group = false
+      this.new_group_data = null
+    },
+
+    edit_group: function (group) {
+      this.edit_group_data = JSON.parse(JSON.stringify(cert))
+      this.edit_group = true
+    },
+    modify_group: function () {
+      api.put('/groups/${this.edit_group_data.id}/',
+      this.edit_group_data).then(res => {
+        this.$store.dispatch('showNotification', {
+          color: 'green',
+          message: 'Updated group successfully.',
+        });
+      }).catch(err => {
+        console.error(err)
+        this.$store.dispatch('showNotification', {
+          color: 'red',
+          message: 'Error updating group.',
+        });
+      }).finally(() => {
+          this.edit_group_data = null
+          this.edit_group = false
+          this.get_groups()
+        });
+      },
+      cancel_edit: function () {
+        this.edit_group_data = null
+        this.edit_group = false
+      },
+      remove_group: function () {
+        api.delete('/groups/${this.delete_group_data.id}').then(res => {
+          this.$store.dispatch('showNotification', {
+            color: 'green',
+            message: 'Group successfully removed.',
+          });
+        }).finally(() => {
+          this.delete_group_data = null
+          this.delete_group = false
+          this.get_groups()
+        });
+      },
+      cancel_delete: function () {
+        this.delete_group_data = null
+        this.delete_group = false
+      },
+    }
+  }
+</script>
+
+
+<!-- Scoped styles for ManageGroups.vue-->
+<style scoped>
+.admin-actions {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+</style>

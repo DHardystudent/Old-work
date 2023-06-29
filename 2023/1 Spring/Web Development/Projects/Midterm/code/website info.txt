@@ -1,0 +1,23 @@
+A minimum of 3 sites
+Home = HardyMidterm.html
+info about the travel agency
+
+2nd = HardyMidNewYear.html
+feature destinations for a weakend New Year's Celebration
+
+3rd = HardyMidSpringBreak.html
+feature destination for week lont spring break
+
+elements to use in this project
+Header
+Nav
+Main
+Footer
+--
+Heading, Paragraph, Figure elements and captions
+Image elements
+Links, Lists, Dive, Tables
+Form elements
+Embedded map (map to locations?)
+Favicon
+Embedded Video

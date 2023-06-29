@@ -1,0 +1,22 @@
+/* CSS for Hardy page*/
+/* CSS Reset */
+body, header, nav, main, footer, img, a, h1, h2, p, div{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+body{
+	background-color: #ff0000;
+}
+
+header{
+	text-align: center;
+	display:block;
+	padding-bottom: 50px;
+	border-bottom:5px solid black;
+}
+
+#menu{
+	border-bottom:5px solid black;
+}

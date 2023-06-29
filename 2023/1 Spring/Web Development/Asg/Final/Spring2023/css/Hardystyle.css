@@ -1,0 +1,183 @@
+/* CSS for Hardy page*/
+/* CSS Reset */
+body, header, nav, main, footer, img, a, h1, h2, p, div{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+body{
+	background-color: #ff0000;
+}
+
+/*Grid Formating*/
+header{
+	text-align: center;
+	display:block;
+	padding-bottom: 50px;
+	border-bottom:5px solid black;
+}
+
+#selfPtr{
+	width: 100%;
+	max-width: 15%;
+	padding: 0 1%;
+	display:block;
+	text-align:center;
+	margin-bottom: 2%;
+	margin-top:2%;
+}
+
+#heading1{
+	width:50%;
+	float:left;
+	padding:0 1%;
+	display: block;
+	text-align: center;
+	font-size: 3em;
+	margin-bottom:5%;
+	margin-top:5%;
+	margin-left:10%;
+}
+
+/* Nav rules */
+nav {
+	background-color: #bfbfbf;
+	padding-top: 5px;
+	padding-bottom:5px;
+	border-bottom:5px solid black;
+}
+nav ul{
+	list-style-type: none;
+	margin:0;
+	text-align:center;
+}
+nav li{
+	display:inline-block;
+	font-size: 1.5em;
+	font-weight:bold;
+}
+nav li a{
+	display:block;
+	padding: .5em 2em .5em 2em;
+	text-decoration:none;
+}
+
+h2{
+	text-align:center;
+}
+
+table, th, td{
+	border: 1px solid;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+th, td{
+	padding: 3px 10px 3px 10px;
+	text-align: center;
+}
+
+th{
+	font-size: 20px;
+}
+
+
+
+#Home{
+	text-align:center;
+	border-bottom:5px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#Hobbies{
+	text-align: center;
+	border-bottom:5px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	background: #ff8080;
+}
+#HList{
+	text-align:left;
+	padding-left: 50px;
+	padding-right: 150px;
+	border-bottom:5px solid black;
+	background: #ff8080;
+}
+
+#Interests{
+	text-align:center;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	padding-left: 50px;
+	padding-right: 50px;
+}
+#ITable{
+	text-align:center;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	padding-left: 50px;
+	padding-right: 50px;
+}
+#IVideo{
+	text-align:center;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+
+#Contact{
+	text-align:center;
+	border-top:5px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#Map{
+	text-align:center;
+	border-top:5px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+/*Relative CSS*/
+
+#Heading2{
+	font-size: 3em;
+	color: cyan;
+}
+
+#TGames{
+	text-align: center;
+	border-bottom:5px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	background: #ff8080;
+}
+
+#VGames{
+	text-align: center;
+	border-bottom:5px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	background: #CF69C5;
+}
+
+#Models{
+	text-align: center;
+	border-bottom:5px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	background: #97E184;
+}
