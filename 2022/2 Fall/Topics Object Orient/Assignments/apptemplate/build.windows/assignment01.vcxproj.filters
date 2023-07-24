@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Everything\My Things\Docs\School\Fall 2022\Topics Object Orient\Work\apps\apptemplate\source\assignment01.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\Everything\My Things\Docs\School\Fall 2022\Topics Object Orient\Work\include\list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Everything\My Things\Docs\School\Fall 2022\Topics Object Orient\Work\apps\apptemplate\include\AdjListGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Everything\My Things\Docs\School\Fall 2022\Topics Object Orient\Work\apps\apptemplate\include\AdjMatrixGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Everything\My Things\Docs\School\Fall 2022\Topics Object Orient\Work\apps\apptemplate\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E3CCED3A-B634-3209-846B-780F70C47CFD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{74399F01-B5FA-3B35-A4D6-C91A6EE79ACE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

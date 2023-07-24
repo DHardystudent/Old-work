@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Everything\My Things\Docs\School\Fall 2022\Topics Object Orient\Work\apps\AirportSim\build.windows\CMakeFiles\557c447262dc4b66d5752adc2c5ad4f8\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{53D6AC2A-F98E-3B00-BF4E-1EE7B48373E8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
